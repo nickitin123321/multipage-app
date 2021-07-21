@@ -22,13 +22,13 @@ export const LoginContext = React.createContext();
 const App = () => {
   const [isLogged, setLogged] = useState(false);
 
-  const handleLoggin = () => {
+  const handleLogin = () => {
     setLogged(!isLogged);
   };
 
   return (
     <TableContext.Provider value={{ tableData }}>
-      <LoginContext.Provider value={{ isLogged, handleLoggin }}>
+      <LoginContext.Provider value={{ isLogged, handleLogin }}>
         <div className="app-wrapper">
           <Header />
           <Switch>
