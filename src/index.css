@@ -20,11 +20,11 @@ code {
   border: 2px solid black;
 }
 
-.table_th {
+.table th {
   padding: 20px;
   border: 3px solid black;
 }
-.table_td {
+.table td {
   padding: 20px;
   border: 1px solid black;
 }
@@ -34,7 +34,7 @@ code {
   padding-bottom: 10px;
 }
 
-.header_button {
+.header button {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

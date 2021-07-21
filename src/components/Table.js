@@ -1,21 +1,22 @@
 import React, { useContext } from 'react';
-import Context from './Context';
+import { TableContext } from './App';
 
 const Table = () => {
-  const value = useContext(Context);
+  const value = useContext(TableContext);
   return (
     <table className="table">
+       <tbody>
       <tr>
         {value.tableData.tableHeaders.map((header, headerId) => {
-          return <th className="table_th" key={headerId}>{header}</th>;
+          return <th key={headerId}>{header}</th>;
         })}
       </tr>
-      <tbody>
+     
         {value.tableData.tableBody.map((row, rowId) => {
           return (
             <tr key={rowId}>
               {row.map((column, columnId) => {
-                return <td className="table_td" key={columnId}>{column}</td>;
+                return <td key={columnId}>{column}</td>;
               })}
             </tr>
           );
