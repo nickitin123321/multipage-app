@@ -13,8 +13,8 @@ const Header = () => {
       &nbsp;
       <Link to="/about">about</Link>
       &nbsp;
-      <input type="checkbox" checked={value.isLogged} onChange={() => value.handleLoggin()}></input>
-      <button className="header_button" onClick={() => value.handleLoggin()}>login/logout</button>
+      <input type="checkbox" checked={value.isLogged} onChange={() => value.handleLogin()}></input>
+      <button className="header_button" onClick={() => value.handleLogin()}>login/logout</button>
     </div>
   );
 };
