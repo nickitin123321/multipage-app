@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import About from './components/About';
+import Secret from './components/Secret';
+import Header from './components/Header';
+import Home from './components/Home';
+import Context from './components/Context';
 
-function App() {
+const tableData = {
+  tableHeaders: ['name', 'digit'],
+  tableBody: [
+    ['pi', Math.PI],
+    ['six', 6],
+    ['thirty-two', 32],
+    ['one hundred-twenty-three', 123],
+  ],
+};
+
+const App = () => {
+  const [isLogged, setLogged] = useState(false);
+
+  const handleLoggin = () => {
+    setLogged(!isLogged);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ tableData, isLogged, handleLoggin }}>
+      <div className="app-wrapper">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/about" component={About}></Route>
+          <Route path="/secret" component={Secret}></Route>
+        </Switch>
+      </div>
+    </Context.Provider>
   );
-}
+};
 
 export default App;
