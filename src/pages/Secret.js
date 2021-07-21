@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
-import { LoginContext } from '../components/App';
-import { Redirect } from 'react-router-dom';
-
+import React from 'react';
 const Secret = () => {
-  const value = useContext(LoginContext);
-  if (value.isLogged) {
-    return <h2 className="secret">Secret page</h2>;
-  } else {
-    return <Redirect to="/" />;
-  }
+  return (
+    <div className="secret-page">
+      <h2>Secret page </h2>
+    </div>
+  );
 };
+
 export default Secret;

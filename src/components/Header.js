@@ -7,14 +7,19 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Link to="/">home</Link>
-      &nbsp;
-      <Link to="/secret">secret</Link>
-      &nbsp;
-      <Link to="/about">about</Link>
-      &nbsp;
+      <h1>
+        <Link to="/">home</Link>
+      </h1>
+      <h1>
+        <Link to="/secret">secret</Link>
+      </h1>
+      <h1>
+        <Link to="/about">about</Link>
+      </h1>
       <input type="checkbox" checked={value.isLogged} onChange={() => value.handleLogin()}></input>
-      <button className="header_button" onClick={() => value.handleLogin()}>login/logout</button>
+      <button className="header_button" onClick={() => value.handleLogin()}>
+        login/logout
+      </button>
     </div>
   );
 };

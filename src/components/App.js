@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import About from '../pages/About';
-
 import Header from './Header';
-import Home from '../pages/Home';
-import Secret from '../pages/Secret';
+import getRoutes from '../router';
 
 const tableData = {
   tableHeaders: ['name', 'digit'],
@@ -31,11 +27,7 @@ const App = () => {
       <LoginContext.Provider value={{ isLogged, handleLogin }}>
         <div className="app-wrapper">
           <Header />
-          <Switch>
-            <Route exact path="/" component={Home}></Route>
-            <Route path="/about" component={About}></Route>
-            <Route path="/secret" component={Secret}></Route>
-          </Switch>
+          {getRoutes(isLogged)}
         </div>
       </LoginContext.Provider>
     </TableContext.Provider>

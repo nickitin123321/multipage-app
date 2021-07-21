@@ -5,13 +5,13 @@ const Table = () => {
   const value = useContext(TableContext);
   return (
     <table className="table">
-       <tbody>
-      <tr>
-        {value.tableData.tableHeaders.map((header, headerId) => {
-          return <th key={headerId}>{header}</th>;
-        })}
-      </tr>
-     
+      <tbody>
+        <tr>
+          {value.tableData.tableHeaders.map((header, headerId) => {
+            return <th key={headerId}>{header}</th>;
+          })}
+        </tr>
+
         {value.tableData.tableBody.map((row, rowId) => {
           return (
             <tr key={rowId}>

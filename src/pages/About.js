@@ -3,7 +3,7 @@ import Table from '../components/Table';
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="about-page">
       <Table />
     </div>
   );
