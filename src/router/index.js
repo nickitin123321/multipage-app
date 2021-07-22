@@ -10,6 +10,7 @@ const getRoutes = isAuthenticated => {
         <Route exact path="/" component={Home}></Route>
         <Route path="/about" component={About}></Route>
         <Route path="/secret" component={Secret}></Route>
+        <Redirect to="/" />
       </Switch>
     );
   }
@@ -23,4 +24,4 @@ const getRoutes = isAuthenticated => {
   );
 };
 
-export default getRoutes
+export default getRoutes;

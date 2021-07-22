@@ -17,7 +17,6 @@ export const LoginContext = React.createContext();
 
 const App = () => {
   const [isLogged, setLogged] = useState(false);
-
   const handleLogin = () => {
     setLogged(!isLogged);
   };

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { LoginContext } from './App';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const value = useContext(LoginContext);
@@ -8,13 +8,13 @@ const Header = () => {
   return (
     <div className="header">
       <h1>
-        <Link to="/">home</Link>
+        <NavLink to="/">home</NavLink>
       </h1>
       <h1>
-        <Link to="/secret">secret</Link>
+        <NavLink to="/secret">secret</NavLink>
       </h1>
       <h1>
-        <Link to="/about">about</Link>
+        <NavLink to="/about">about</NavLink>
       </h1>
       <input type="checkbox" checked={value.isLogged} onChange={() => value.handleLogin()}></input>
       <button className="header_button" onClick={() => value.handleLogin()}>
