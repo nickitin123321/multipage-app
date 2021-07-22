@@ -16,7 +16,10 @@ export const TableContext = React.createContext();
 export const LoginContext = React.createContext();
 
 const App = () => {
+  
   const [isLogged, setLogged] = useState(false);
+  const routes = getRoutes(isLogged);
+  
   const handleLogin = () => {
     setLogged(!isLogged);
   };
@@ -26,7 +29,7 @@ const App = () => {
       <LoginContext.Provider value={{ isLogged, handleLogin }}>
         <div className="app-wrapper">
           <Header />
-          {getRoutes(isLogged)}
+          {routes}
         </div>
       </LoginContext.Provider>
     </TableContext.Provider>
